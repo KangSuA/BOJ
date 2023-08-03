@@ -19,6 +19,8 @@ def dijkstra(s):
   while q:
     dist, now = heappop(q)
     if time[s][now] < dist:
+      if s!=X and now==X:
+        return
       continue
     for i in graph[now]:
       cost = dist + i[1]
